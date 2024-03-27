@@ -5,9 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.admin.medease.ARG_PARAM1
-import com.admin.medease.ARG_PARAM2
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.admin.medease.DoctorModel
+
 import com.admin.medease.R
+import com.admin.medease.adapter.DoctorAdapter
+import com.admin.medease.databinding.FragmentDoctorBinding
+import com.google.firebase.Firebase
+import com.google.firebase.firestore.firestore
 
 /**
  * A simple [Fragment] subclass.
@@ -15,15 +21,16 @@ import com.admin.medease.R
  * create an instance of this fragment.
  */
 class DoctorFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    lateinit var binding: FragmentDoctorBinding
+    var db = Firebase.firestore
+    lateinit var doctorAdapter: DoctorAdapter
+    var doctorList = ArrayList<DoctorModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+
+
         }
     }
 
@@ -32,26 +39,24 @@ class DoctorFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_doctor, container, false)
-    }
+        binding = FragmentDoctorBinding.inflate(layoutInflater)
+        doctorList.clear()
+        db.collection("Doctors").get().addOnSuccessListener {
+            for (document in it.documentChanges) {
+                var model = document.document.toObject(DoctorModel::class.java)
+                model.id = document.document.id
+                doctorList.add(model)
+                println("Doctor: $doctorList")
+                doctorAdapter.notifyDataSetChanged()
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment DoctorFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            DoctorFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
             }
+        }
+        doctorAdapter = DoctorAdapter(doctorList)
+        binding.lvList.layoutManager = LinearLayoutManager(requireActivity())
+        binding.lvList.adapter = doctorAdapter
+        binding.fabBtn.setOnClickListener {
+            findNavController().navigate(R.id.doctorFragmentAdd)
+        }
+        return binding.root
     }
 }

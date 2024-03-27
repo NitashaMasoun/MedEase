@@ -112,7 +112,7 @@ class SpecialisationFragment : Fragment(), ClickInterface {
     override fun onNextClick(specialisationModel: SpecialisationModel) {
             println("OnNextClick: $specialisationModel")
             findNavController().navigate(
-                R.id.addSpecialisationFragment,
+                R.id.doctorFragment,
                 bundleOf("CatId" to specialisationModel.id)
             )
 

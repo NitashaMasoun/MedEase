@@ -1,43 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     tools:context=".fragment.DoctorFragment">
-    <TextView
-        android:id="@+id/tvName"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lvList"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20sp"
-        android:gravity="center"
-        android:text="Add Doctor"
-        android:textSize="40sp"
-        android:textStyle="bold|italic" />
-    <EditText
-        android:id="@+id/Category"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20sp"
-        android:hint="Category"
-        android:textSize="34dp"
-        android:textStyle="bold|italic" />
-    <EditText
-        android:id="@+id/description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20sp"
-        android:hint="description"
-        android:textSize="34dp"
-        android:textStyle="bold|italic" />
-    <Button
-        android:id="@+id/btnAdd"
+        android:layout_height="wrap_content"/>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="20sp"
-        android:text="Add"
-        android:textSize="20dp"
-        android:textStyle="italic|bold" />
-</LinearLayout>
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:src="@android:drawable/ic_input_add" />
+</RelativeLayout>

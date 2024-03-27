@@ -25,6 +25,7 @@ class LoginActivity : AppCompatActivity() {
                     if (task.isSuccessful) {
                         val user = auth.currentUser
                         startActivity(Intent(this, ListActivity::class.java))
+                        this.finish()
                     } else {
                         Toast.makeText(
                             baseContext,

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".fragment.DoctorFragmentAdd">
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:gravity="center"
+        android:text="Add Doctor"
+        android:textSize="40sp"
+        android:textStyle="bold|italic" />
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:hint="Email"
+        android:textSize="34dp"
+        android:textStyle="bold|italic" />
+    <EditText
+        android:id="@+id/edtPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:hint="Password"
+        android:textSize="34dp"
+        android:textStyle="bold|italic" />
+    <EditText
+        android:id="@+id/etCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:hint="Category"
+        android:textSize="34dp"
+        android:textStyle="bold|italic" />
+    <EditText
+        android:id="@+id/etdescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:hint="description"
+        android:textSize="34dp"
+        android:textStyle="bold|italic" />
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20sp"
+        android:text="Add"
+        android:textSize="20dp"
+        android:textStyle="italic|bold" />
+</LinearLayout>
