@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.admin.medease.PanelActivity
 import com.admin.medease.R
 
 class MainActivity : AppCompatActivity() {
@@ -11,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Handler().postDelayed({
-            startActivity(Intent (this, LoginActivity::class.java))
+            startActivity(Intent (this, PanelActivity::class.java))
         },2000)
     }
 }
