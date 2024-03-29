@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.admin.medease.adapter.DoctorAdapter
 import com.admin.medease.databinding.AddFragmentDoctorBinding
 import com.admin.medease.databinding.FragmentDoctorBinding
@@ -49,7 +50,8 @@ class DoctorFragmentAdd : Fragment() {
                 "name" to binding.etCategory.text.toString(),
                 "email" to binding.edtEmail.text.toString(),
                 "password" to binding.edtPassword.text.toString(),
-                "description" to binding.etdescription.text.toString()
+                "description" to binding.etdescription.text.toString(),
+                "catId" to CatId
             )
             val email=binding.edtEmail.text.toString()
             val password=binding.edtPassword.text.toString()
@@ -57,6 +59,7 @@ class DoctorFragmentAdd : Fragment() {
                 if(it.isSuccessful){
                     db.collection("Doctors").add(category)
                         .addOnSuccessListener {
+                            findNavController().popBackStack()
                             Toast.makeText(requireActivity(), "Category added", Toast.LENGTH_SHORT).show()
 
                         }

@@ -22,7 +22,6 @@
             android:text="MedEase"
             android:textStyle="bold|italic"
             android:textSize="50dp"
-            android:background="#4F7075CD"
             android:layout_marginTop="50dp"
             android:textColor="#1B739E"
             android:fontFamily="cursive" />

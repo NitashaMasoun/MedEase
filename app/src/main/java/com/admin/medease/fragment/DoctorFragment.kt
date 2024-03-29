@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -25,12 +26,13 @@ class DoctorFragment : Fragment() {
     var db = Firebase.firestore
     lateinit var doctorAdapter: DoctorAdapter
     var doctorList = ArrayList<DoctorModel>()
+    var catId = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-
-
+            catId = it.getString("CatId").toString()
+            println("CatId: $catId")
         }
     }
 
@@ -55,7 +57,7 @@ class DoctorFragment : Fragment() {
         binding.lvList.layoutManager = LinearLayoutManager(requireActivity())
         binding.lvList.adapter = doctorAdapter
         binding.fabBtn.setOnClickListener {
-            findNavController().navigate(R.id.doctorFragmentAdd)
+            findNavController().navigate(R.id.doctorFragmentAdd, bundleOf("CatId" to catId))
         }
         return binding.root
     }

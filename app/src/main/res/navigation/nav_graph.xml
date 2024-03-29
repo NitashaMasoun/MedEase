@@ -21,4 +21,15 @@
         android:label="fragment_update_specialisation"
         tools:layout="@layout/fragment_update_specialisation" />
 
+    <fragment
+        android:id="@+id/doctorFragmentAdd"
+        android:name="com.admin.medease.fragment.DoctorFragmentAdd"
+        android:label="add_fragment_doctor"
+        tools:layout="@layout/add_fragment_doctor" />
+    <fragment
+        android:id="@+id/doctorFragment"
+        android:name="com.admin.medease.fragment.DoctorFragment"
+        android:label="fragment_doctor"
+        tools:layout="@layout/fragment_doctor" />
+
 </navigation>

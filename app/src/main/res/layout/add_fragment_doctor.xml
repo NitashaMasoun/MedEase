@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:background="@color/design_default_color_secondary"
     tools:context=".fragment.DoctorFragmentAdd">
     <TextView
         android:id="@+id/tvName"
