@@ -89,7 +89,6 @@ class SpecialisationFragment : Fragment(), ClickInterface {
             R.id.updateSpecialisationFragment,
             bundleOf("CatId" to specialisationModel.id)
         )
-
     }
 
     override fun onDelete(specialisationModel: SpecialisationModel) {

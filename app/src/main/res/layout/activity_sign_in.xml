@@ -5,25 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#0CF8F8"
     tools:context=".activities.SignInActivity">
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email"
-        android:textSize="34dp"
+        android:textSize="40dp"
         android:textColor="@color/black"
         android:textStyle="bold|italic"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
         android:id="@+id/edtEmail" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
-        android:textSize="34dp"
-        android:textColor="@color/black"
+        android:textSize="40dp"
+        android:layout_marginBottom="40dp"
         android:textStyle="bold|italic"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
         android:id="@+id/edtPassword" />
     <Button
         android:id="@+id/btnSignIn"
@@ -31,7 +32,7 @@
         android:layout_height="wrap_content"
         android:text="SignIn"
         android:textStyle="bold|italic"
-        android:layout_marginTop="15dp"
-        android:padding="20sp"
-        android:layout_marginLeft="145dp" />
+        android:layout_marginTop="50dp"
+        android:textSize="25dp"
+        android:layout_marginLeft="155dp" />
 </LinearLayout>
